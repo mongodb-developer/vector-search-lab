@@ -1,0 +1,39 @@
+# 📦 Deploying the workshop
+
+## Building/testing it
+
+`npm start` builds a development version of the Docusaurus workshop. To build the production version locally we should use `npm run build` that also checks links. 
+
+It will create a `build` directory. This is a generated static version of the workshop we can host anywhere. This directory is ignored by git.
+
+The Search Box plugin __only works with a production build__. So: run a `npm run build` before pushing your changes to the repo.
+
+## Make your repo public
+
+- to be able to use GH Pages, the repo has to be public
+    - if it's private go to repo settings > Danger Zone > Change repository visibility and make it public.
+
+## Add a Secret
+
+- in the `deploy.yml` GH Action file we use the `GH_TOKEN` secret. 
+    - we need to create a Github Token with some permissions. Open your [profile settings](https://github.com/settings/profile) > Developer Settings > Personal Access Tokens > Fine-grained personal access tokens.
+        - restrict this token to the repo containing the workshop (Repository Access > Only select repositories)
+        - Repository permissions: Actions, Contents, Deployments, Pages and Workflows, all R/W
+    - We need now to go to the repo settings > Secrets and variables > Actions and add a new Repository Secret pasting there the token we just created
+
+![](/img/gh-secret.png)
+
+- The 1st time the GH has failed running as the token wasn't there. Re-run the GH Action so it finshes successfully. It will create a gh-pages branch in the repo, so you know it worked.
+- If you changed the `workshopName` in `docusaurus.config.js` everything should work.
+
+## Setting up Github pages
+
+The final step is to configure Github Pages to use the `gh-pages` branch of your Lab. This branch is created by Github the 1st time you deploy the Lab on GH Pages. If you don't see it in Settings > Pages > Branch > Select Branch, go to Actions and re-run the `Deploy to Github Pages` action.
+
+Go to Settings > Pages and select your `main` branch and change the GH Pages visibility to public. We can only do this if our repo is already public.
+
+![](/img/gh-pages.png)
+
+## Github Actions
+
+In `./github/workflows` there's a Github action to automatically deploy this site in Github pages. You just need to push changes to `main` and everything should happen automagically.

@@ -1,0 +1,69 @@
+# 🌅 Imágenes
+
+## Mostrar imágenes usando Markdown
+
+Para mostrar esta imagen:
+
+![Algún texto alternativo](/img/docu.svg)
+
+Simplemente usa el código habitual de Markdown:
+
+```
+![Algún texto alternativo](/img/docu.svg)
+```
+
+## Mostrar imágenes usando JSX
+
+Si deseas un control más detallado sobre cómo se presenta la imagen (cambiar el tamaño, por ejemplo), usa este fragmento de JSX:
+
+```jsx
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img
+        alt="Usando JSX para cambiar el tamaño de la imagen"
+        src={useBaseUrl('/img/docu.svg')}
+        width="500"
+/>
+```
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img
+        alt="Usando JSX para cambiar el tamaño de la imagen"
+        src={useBaseUrl('/img/docu.svg')}
+        width="500"
+/>
+
+## Mostrar imágenes usando JSX, manera recomendada
+
+Podemos simplemente importar la imagen o recurso deseado y crear una variable que usaremos para mostrar la imagen. Funciona bien con imágenes (png, gif, jpg) pero no con archivos svg.
+
+```jsx
+import SampleImage from '@site/static/img/logo.png';
+
+<img
+        alt="Usando JSX para cambiar el tamaño de la imagen"
+        src={SampleImage}
+        width="100"
+/>
+```
+
+import SampleImage from '@site/static/img/logo.png';
+
+<img
+        alt="Usando JSX para cambiar el tamaño de la imagen"
+        src={SampleImage}
+        width="100"
+/>
+
+## Capturas de pantalla
+
+Si necesitas agregar capturas de pantalla, puedes usar el componente `Screenshot`, que envolverá la imagen en un marco de navegador.
+
+<Screenshot src="img/screenshot.png" url="https://github.com/mongodb-developer/docusauru-workshop" alt="Captura de pantalla de la documentación" />
+
+Aquí está la sintaxis para el componente Screenshot:
+
+```jsx
+<Screenshot src="img/path_to_image.png" url="<mostrado en la barra de direcciones" alt="Texto alternativo para la imagen" />
+```

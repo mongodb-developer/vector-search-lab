@@ -1,0 +1,70 @@
+# 🌅 Images
+
+## Showing images using Markdown
+
+To show this image:
+
+![Some alt text](/img/docu.svg)
+
+Just use the usual Markdown code:
+
+```
+![Some alt text](/img/docu.svg)
+```
+
+## Showing images using JSX
+
+If you want a fine-grained control over how the image is presented (changing the size, for instance) then use this JSX snippet:
+
+```jsx
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img
+        alt="Using JSX to change image's size"
+        src={useBaseUrl('/img/docu.svg')}
+        width="500"
+/>
+```
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img
+        alt="Using JSX to change image's size"
+        src={useBaseUrl('/img/docu.svg')}
+        width="500"
+/>
+
+## Showing images using JSX, recommended way
+
+We can just import the desired image/resource and create a variable that we'll use to display the image. Works well with images (pngs, gif, jpg) not with svg files.
+
+```jsx
+import SampleImage from '@site/static/img/logo.png';
+
+<img
+        alt="Using JSX to change image's size"
+        src={SampleImage}
+        width="100"
+/>
+```
+
+
+import SampleImage from '@site/static/img/logo.png';
+
+<img
+        alt="Using JSX to change image's size"
+        src={SampleImage}
+        width="100"
+/>
+
+## Screenshots
+If you need to add screenshots, you can use the `Screenshot` component which will wrap the image in a browser frame.
+
+<Screenshot src="img/screenshot.png" url="https://github.com/mongodb-developer/docusauru-workshop" alt="Screenshot of the documentation" />
+
+Here's the syntax for the Screenshot component
+
+```jsx
+<Screenshot src="img/path_to_image.png" url="<showed in the address bar" alt="Alt text for the image" />
+```

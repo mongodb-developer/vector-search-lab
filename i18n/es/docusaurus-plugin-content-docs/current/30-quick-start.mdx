@@ -1,0 +1,45 @@
+# 🏁 Inicio Rápido
+
+Para los impacientes, o sea, todos nosotros
+
+## Instalar Node
+
+Para usar Docusaurus, necesitamos [instalar Node.js](https://nodejs.org/en/download).
+
+## Instalar npx
+
+Para clonar este repositorio, utilizaremos [npx](https://www.npmjs.com/package/npx).
+
+```shell
+npm i npx
+```
+
+## Clonar este repositorio
+
+Clona este repositorio usando `npx`, dándole el nombre del taller sobre el que deseas escribir.
+
+```shell
+npx create-docusaurus@latest nombre-de-mi-nuevo-increible-taller https://github.com/mongodb-developer/docusaurus-workshop
+```
+
+## Eliminar el directorio .git
+
+En este momento, el `origin` apunta a https://github.com/mongodb-developer/docusaurus-workshop y no quieres eso. Además, lo más probable es que no quieras el historial de este repositorio git.
+
+```shell
+rm -rf .git
+git init
+git add .
+git commit -m "Versión inicial"
+```
+
+## ¡Inícialo!
+
+```shell
+cd nombre-de-mi-nuevo-increible-taller
+npm start
+```
+
+## ¡Pruébalo!
+
+Si todo va según lo planeado, tu sitio debería estar disponible en `http://localhost:3000/nombre-de-mi-nuevo-increible-taller`.

@@ -1,0 +1,42 @@
+# 🔗 Links
+
+You can link to internal or external pages in your markdown.
+
+## Link to MongoDB
+
+When adding links to MongoDB, you should always use UTM parameters to track the source of the link. This helps us understand where our traffic is coming from and how to optimize our content.
+
+Fortunately, this can easily be done with the `Link` component.
+
+### Use the component
+
+In your markdown, you can use this component to create links.
+
+```jsx
+Try MongoDB <Link to="http://mongodb.com/try">with a free account</Link>
+```
+
+This will create a link that looks like this:
+Try MongoDB <Link to="http://mongodb.com/try">with a free account</Link>
+
+## Internal links
+
+Links to other pages of the docusaurus use regular markdown syntax.
+
+```md
+[Images](/docs/content-tips/images)
+```
+
+This will create a link that looks like this:
+[Images](/docs/content-tips/images)
+
+## External links (non-MongoDB)
+
+Links to external website use traditional markdown as well.
+
+```md
+[Google](https://google.com)
+```
+
+This will create a link that looks like this:
+[Google](https://google.com)

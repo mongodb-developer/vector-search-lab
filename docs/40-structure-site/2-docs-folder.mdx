@@ -1,0 +1,62 @@
+# 📂 The docs folder
+
+The `/docs` folder contains our workshop documents. __You'll spend most of your time preparing a workshop in this folder.__
+
+These can be Markdown (`.md`) files or MDX files. Each of these documents represents a step in your workshop, or some information you need to explain. If one of this documents is too long, we can create folders to have our content organized. This very step is contained in a folder! 
+
+## Simple MDX files
+
+To create a new step for your workshop, go ahead and create a new `.mdx` file (or duplicate an existing one). Then you can start typing Markdown there.
+
+All the [supported Markdown features](https://docusaurus.io/docs/markdown-features) are in this Docusaurus reference documentation page, but looking at the source code of this workshop _should give you an indication of what's possible_.
+
+You also have a [Markdown test](/docs/content-tips/md-support-test) to test what you can do with MD + Docusaurus.
+
+## Ordering pages
+
+We can order pages using one of three methods:
+
+### Numbers in names
+
+Add a number at the beginning of each page and they will auto-sort. For instance:
+
+```
+1-intro.mdx
+2-docusaurus.mdx
+3-quick-start.mdx
+```
+
+If you plan on using more than 10 pages, sorting will be not that clever so you'd better name your pages:
+
+```
+01-intro.mdx
+02-docusaurus.mdx
+03-quick-start.mdx
+```
+
+so `11-whatever.mdx` goes after `09-page.mdx` and not after `1-intro.mdx`
+
+### Font matter in docs
+
+Adding some front matter to the page, no need to add a number to the name then:
+
+```
+---
+sidebar_position: 1
+---
+```
+
+### _category.json file
+
+If we have a folder that contains a bunch of docs, we can change the folder's name and position using this file
+
+```json
+{
+    "label": "Site Structure",
+    "position": 4,
+    "link": {
+        "type": "generated-index",
+        "description": "In this section, you'll install all required software."
+    }
+}
+```
