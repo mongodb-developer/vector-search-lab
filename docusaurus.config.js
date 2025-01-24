@@ -4,14 +4,14 @@
 // Change here to customise config
 
 // Name of the Github Repo, it's also teh baseUrl
-const workshopName = 'docusaurus-workshop';
+const workshopName = 'vector-search-lab';
 // Change this if hosting outside mongodb-developer
 const organizationName = "mongodb-developer";
 
 // Main page config
-const title = "Docusaurus Meta Workshop";
-const tagLine = "A Workshop written in Docusaurus to teach you how to write Workshops using docusaurus";
-const startButtonTitle = "Enter Inception";
+const title = "Introduction to Vector Search";
+const tagLine = "";
+const startButtonTitle = "Start Lab";
 const favicon = "img/favicon.svg"
 
 // Main Page Features
@@ -41,8 +41,8 @@ const featureList = [
 
 // UTM stuff
 
-const utmAdvocateName = `diego.freniche`;
-const utmWorkshopName = 'docusaurus_workshop'
+const utmAdvocateName = `apoorva.joshi`;
+const utmWorkshopName = 'vector_search_lab'
 
 const utmParams = `utm_campaign=devrel&utm_source=workshop&utm_medium=cta&utm_content=${utmWorkshopName}&utm_term=${utmAdvocateName}`;
 
@@ -54,12 +54,16 @@ const footerLinks = [
     href: `https://www.mongodb.com/try?${utmParams}`,
   },
   {
-    label: "Forums",
-    href: `https://www.mongodb.com/community/forums/${utmParams}`,
-  },
-  {
     label: "Developer Center",
     href: `https://www.mongodb.com/developer/${utmParams}`,
+  },
+  {
+    label: "GenAI Code Examples",
+    href: `https://github.com/mongodb-developer/GenAI-Showcase`,
+  },
+  {
+    label: "GenAI Forums",
+    href: `https://www.mongodb.com/community/forums/c/generative-ai/162/${utmParams}`,
   },
   {
     label: "MongoDB University",
@@ -97,14 +101,10 @@ const config = {
   favicon: `${favicon}`,
   deploymentBranch: "gh-pages",
   staticDirectories: ["static"],
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "es"],
-  },
   customFields: {
     startButtonTitle: `${startButtonTitle}`,
     featureList: featureList,
-    utmParams,
+    utmParams
   },
   presets: [
     [
@@ -135,14 +135,6 @@ const config = {
           hideable: true,
         },
       },
-      announcementBar: {
-        id: "feedback_form",
-        content:
-          'This is a demonstration that we can put a pop-up message here! Even <a target="_blank" rel="noopener noreferrer" href="#">links</a>',
-        backgroundColor: "#fafbfc",
-        textColor: "#091E42",
-        isCloseable: true,
-      },
       navbar: {
         title: `${title}`,
         logo: {
@@ -153,12 +145,7 @@ const config = {
           width: "135px",
           height: "100%",
         },
-        items: [
-          {
-            type: "localeDropdown",
-            position: "right",
-          },
-        ],
+        items: [],
       },
       footer: {
         style: "dark",
@@ -169,17 +156,7 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ["powershell", "swift", "kotlin"],
       },
-      mermaid: {
-        theme: { light: "neutral", dark: "forest" },
-      },
     }),
-  future: {
-    experimental_faster: true,
-  },
-  markdown: {
-    mermaid: true,
-  },
-  themes: ["@docusaurus/theme-mermaid"],
 };
 
 module.exports = config;
