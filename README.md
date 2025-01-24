@@ -1,19 +1,26 @@
-# Docusaurus Template Workshop
+# Developer Days Vector Search Lab
 
-This is a template to __create new Lab documentation sites__. Contains info on how to use Docusaurus and is a good starting point.
+This is the Vector Search Lab used during MongoDB Developer Days that covers an introduction to vector search using MongoDB.
 
-### Installation, use, how to build, etc.
+You can access the online version of the lab [here](https://mongodb-developer.github.io/vector-search-lab/).
 
-Everything is covered in the Lab itself: https://mongodb-developer.github.io/docusaurus-workshop/
+## Running the Lab Locally
+
+If you want to run the lab locally, you can start by cloning the repository or downloading the code. You will need to have [Node.js](https://nodejs.org/en/) installed.
+
+Once you have the code, you can run the following commands to install the dependencies and start the server:
+
+```
+npm install
+npm start
+```
+
+You can then access the lab at http://localhost:3000
 
 ## Contributing
 
-As `main` is protected, submit a pull request to be reviewed.
+If you find any issues with the lab, please open an issue or submit a pull request.
 
-## Docusaurus
+## License
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator. It's available on https://mongodb-developer.github.io/docusaurus-workshop/.
-
-### Disclaimer
-
-Use at your own risk; not a supported MongoDB product
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details
