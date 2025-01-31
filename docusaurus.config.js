@@ -73,10 +73,6 @@ const footerLinks = [
     href: `https://github.com/${organizationName}/${workshopName}`,
     label: "This lab in GitHub",
   },
-  {
-    label: `© ${new Date().getFullYear()} MongoDB, Inc.`,
-    href: "#",
-  },
 ];
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -150,6 +146,7 @@ const config = {
       footer: {
         style: "dark",
         links: footerLinks,
+        copyright: `© ${new Date().getFullYear()} MongoDB, Inc.`,
       },
       prism: {
         theme: lightCodeTheme,
