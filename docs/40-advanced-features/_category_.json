@@ -1,0 +1,8 @@
+{
+    "label": "Advanced Features",
+    "position": 40,
+    "link": {
+        "type": "generated-index",
+        "description": "Optimize your vector search with advanced features."
+    }
+}
