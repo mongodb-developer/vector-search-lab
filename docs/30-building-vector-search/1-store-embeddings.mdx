@@ -1,1 +1,70 @@
 # 👐 Store Embeddings
+
+### Generate Embeddings
+
+**CODE_BLOCK_2**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+embedding_model.encode(image).tolist()
+```
+
+</div>
+</details>
+
+### Add embedding vectors to existing documents
+
+**CODE_BLOCK_3**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+collection.find({})
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_4**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+get_embedding(content, "image")
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_5**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+{"$set": {embedding_field: embedding}}
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_6**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+collection.update_one(filter, update)
+```
+
+</div>
+</details>

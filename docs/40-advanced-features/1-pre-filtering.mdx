@@ -1,1 +1,86 @@
 # 📘👐 Pre-Filtering
+
+### Filter for books that were published after the year 2000
+
+**CODE_BLOCK_11**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+{
+    "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
+    "type": "vectorSearch",
+    "definition": {
+        "fields": [
+            {
+                "type": "vector",
+                "path": "embedding",
+                "numDimensions": 512,
+                "similarity": "cosine",
+            },
+            {"type": "filter", "path": "year"},
+        ]
+    },
+}
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_12**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+{"year": {"$gte": 2000}}
+```
+
+</div>
+</details>
+
+### Filter for books that were published after the year 2000 and under 100 pages
+
+**CODE_BLOCK_13**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+{
+    "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
+    "type": "vectorSearch",
+    "definition": {
+        "fields": [
+            {
+                "type": "vector",
+                "path": "embedding",
+                "numDimensions": 512,
+                "similarity": "cosine",
+            },
+            {"type": "filter", "path": "year"},
+            {"type": "filter", "path": "pages"},
+        ]
+    },
+}
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_14**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+{"$and": [{"year": {"$gte": 2000}}, {"pages": {"$lte": 100}}]}
+```
+
+</div>
+</details>

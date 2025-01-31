@@ -1,1 +1,52 @@
 # 👐 Run Vector Queries
+
+**CODE_BLOCK_8**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+get_embedding(user_query, mode)
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_9**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+[
+    {
+        "$vectorSearch": {
+            "index": ATLAS_VECTOR_SEARCH_INDEX_NAME,
+            "queryVector": query_embedding,
+            "path": "embedding",
+            "numCandidates": 50,
+            "filter": filter,
+            "limit": 5,
+        }
+    },
+    {"$project": {"_id": 0, "title": 1, "score": {"$meta": "vectorSearchScore"}}},
+]
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_10**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+collection.aggregate(pipeline)
+```
+
+</div>
+</details>
