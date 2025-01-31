@@ -1,0 +1,36 @@
+# 📘👐 Similarity Functions
+
+Atlas Vector Search supports different similarity functions to search for top K-nearest neighbors. You can set the similarity function for vector type fields in your index definition.
+
+* `euclidean` - measures the distance between ends of vectors.
+* `cosine` - measures similarity based on the angle between vectors.
+* `dotProduct` - measures similarity like cosine, but takes into account the magnitude of the vector.
+
+📚 [About the similarity functions](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/#std-label-avs-similarity-functions)
+
+
+**CODE_BLOCK_15**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```Python
+{
+    "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
+    "type": "vectorSearch",
+    "definition": {
+        "fields": [
+            {
+                "type": "vector",
+                "path": "embedding",
+                "numDimensions": 512,
+                "similarity": "dotProduct",
+            },
+        ]
+    },
+}
+```
+
+</div>
+</details>

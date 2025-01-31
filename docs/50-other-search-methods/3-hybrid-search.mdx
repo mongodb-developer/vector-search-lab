@@ -1,12 +1,8 @@
 # 🦹‍♀️ Hybrid Search
 
-## What & Why
+📚 [How to Perform Hybrid Search](https://www.mongodb.com/docs/atlas/atlas-search/tutorial/hybrid-search/#how-to-perform-hybrid-search)
 
-## Key Features
-
-## When to Use
-
-## Comparison with Atlas Vector Search
+Hybrid search in MongoDB combines Atlas Vector Search and Atlas Search to provide unified search results. This approach leverages the strengths of both full-text search and semantic search to deliver more relevant results.
 
 **CODE_BLOCK_17**
 
@@ -15,7 +11,21 @@
 <div>
 
 ```Python
-collection.create_search_index(model=model)
+{
+    "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
+    "type": "vectorSearch",
+    "definition": {
+        "fields": [
+            {
+                "type": "vector",
+                "path": "embedding",
+                "numDimensions": 512,
+                "similarity": "cosine",
+                "quantization": "scalar",
+            },
+        ]
+    },
+}
 ```
 
 </div>

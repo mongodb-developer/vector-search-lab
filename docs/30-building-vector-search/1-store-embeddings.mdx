@@ -1,6 +1,11 @@
 # 👐 Store Embeddings
 
-### Generate Embeddings
+Let's imagine you're running an online bookstore and want to enable semantic search for **book cover images** - allowing users to search either with similar images or descriptive text.
+
+### Generate Embeddings for book cover images
+
+First, you'll need to choose an appropriate embedding model. For this use case, we'll use [CLIP](https://huggingface.co/openai/clip-vit-base-patch32), a multimodal model that can handle both images and text. CLIP generates 512-dimensional vectors that capture the semantic meaning of both images and text in the same vector space.
+
 
 **CODE_BLOCK_2**
 
@@ -15,7 +20,9 @@ embedding_model.encode(image).tolist()
 </div>
 </details>
 
-### Add embedding vectors to existing documents
+### Store them along with your book documents
+
+After generating embeddings for your book cover images, store them in MongoDB Atlas along with your book documents. These embeddings can then be used to create a vector search index for your bookstore.
 
 **CODE_BLOCK_3**
 

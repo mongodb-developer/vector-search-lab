@@ -1,12 +1,11 @@
 # 📘 Embeddings
 
-## What & Why
+## Vector embeddings
+Vector embeddings are vectors you use to represent your data. These embeddings capture meaningful relationships in your data and enable tasks like semantic search and retrieval. You create vector embeddings by passing your data through an embedding model, and you can store these embeddings in Atlas as a field in a document.
 
-* Definition
-* Purpose in Vector Search
+## Embedding model
+Embedding models are algorithms that you use to convert your data into vector embeddings.
 
-## Types of Embeddings
+The embedding model that you choose determines the dimensions of your vector embeddings. You must specify these dimensions as a field in your [Atlas Vector Search](vector-search#atlas-vector-search) index.
 
-* Text
-* Image
-* Multi-modal
+Embedding models vary depending on how the model was trained. Therefore, different models offer different advantages depending on your data and use case. While text embedding models are widely used, embedding models also exist for other types of data such as images, audio, and multimodal content.

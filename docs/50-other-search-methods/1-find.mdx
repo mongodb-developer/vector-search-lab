@@ -1,9 +1,14 @@
 # 📘 `.find()`
 
-## What & Why
+📚 [db.collection.find()](https://www.mongodb.com/docs/manual/reference/method/db.collection.find/)
 
-## Key Features
+The `find()` method performs traditional queries in MongoDB, retrieving documents from a collection based on specified criteria.
 
-## When to Use
+It supports exact matching, range queries, and other query types using the MongoDB Query API.
 
-## Comparison with Vector Search
+Use `find()` when you need to retrieve documents that match specific field values or conditions.
+
+### Usage Example
+```python
+db.collection.find({ "name": "Alice" })
+```

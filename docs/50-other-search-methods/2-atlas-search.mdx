@@ -1,9 +1,23 @@
 # 📘 Atlas Search
 
-## What & Why
+📚 [Atlas Search](https://www.mongodb.com/docs/atlas/atlas-search/)
 
-## Key Features
+Atlas Search provides full-text search capabilities in MongoDB Atlas, enabling text-based searches across your data.
 
-## When to Use
+It uses text indexes to support advanced features like tokenization, stemming, and relevance scoring.
 
-## Comparison with Vector Search
+Use Atlas Search when your application needs sophisticated text search capabilities, like searching by keywords or phrases.
+
+### Usage Example
+
+```python
+{
+  "$search": {
+    "index": "default",
+    "text": {
+      "query": "search term",
+      "path": "fieldName"
+    }
+  }
+}
+```
