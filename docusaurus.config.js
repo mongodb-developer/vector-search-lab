@@ -9,7 +9,7 @@ const workshopName = 'vector-search-lab';
 const organizationName = "mongodb-developer";
 
 // Main page config
-const title = "Introduction to Vector Search";
+const title = "Vector Search: Beginner to Pro";
 const tagLine = "";
 const startButtonTitle = "Start Lab";
 const favicon = "img/favicon.ico";
