@@ -1,0 +1,8 @@
+{
+    "label": "Other Search Techniques in MongoDB",
+    "position": 60,
+    "link": {
+        "type": "generated-index",
+        "description": "Learn about other search techniques supported in MongoDB, including hybrid search"
+    }
+}

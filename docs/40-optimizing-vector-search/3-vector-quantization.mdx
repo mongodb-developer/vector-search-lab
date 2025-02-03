@@ -1,0 +1,36 @@
+# 👐 Vector quantization
+
+Vector quantization is a technique to reduce the number of bits required to represent a vector. This can help reduce the storage and memory requirements for vector embeddings.
+
+We support two types of quantization in MongoDB Atlas i.e. `scalar` and `binary`. Refer to our [documentation](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-quantization/#about-quantization) to learn more about quantization.
+
+Fill in any `<CODE_BLOCK_N>` placeholders and run the cells under the **Step 9: Enable vector quantization** section in the notebook to enable auto-quantization on your embeddings.
+
+The answers for code blocks in this section are as follows:
+
+**CODE_BLOCK_16**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```python
+{
+    "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
+    "type": "vectorSearch",
+    "definition": {
+        "fields": [
+            {
+                "type": "vector",
+                "path": "embedding",
+                "numDimensions": 512,
+                "similarity": "cosine",
+                "quantization": "scalar",
+            },
+        ]
+    },
+}
+```
+
+</div>
+</details>

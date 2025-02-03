@@ -1,0 +1,61 @@
+# 👐 Add embeddings to the data in MongoDB
+
+Now that you know how to generate embeddings using the CLIP model, let's add embeddings to the books dataset you previously imported into MongoDB.
+
+This is a common scenario you will run into where you might already have data in MongoDB that you want to update with embeddings. 
+
+Fill in any `<CODE_BLOCK_N>` placeholders and run the cells under the **Step 4: Adding Embeddings to Existing Data in Atlas** section in the notebook to add embeddings of the books' cover image to the documents in the `books` collection.
+
+The answers for code blocks in this section are as follows:
+
+**CODE_BLOCK_3**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```python
+collection.find({})
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_4**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```python
+get_embedding(content, "image")
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_5**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```python
+{"$set": {embedding_field: embedding}}
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_6**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```python
+collection.update_one(filter, update)
+```
+
+</div>
+</details>

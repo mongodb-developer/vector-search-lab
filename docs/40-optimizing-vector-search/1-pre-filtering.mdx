@@ -1,12 +1,14 @@
-# 📘👐 Pre-Filtering
+# 👐 Pre-filtering
 
-You can also pre-filter your data by indexing any boolean, date, numeric, objectId, string, and UUID fields in your collection that you want to run your Atlas Vector Search queries against.
+Pre-filtering is a technique to optimize vector search by only considering documents that match certain criteria during vector search.
 
-Filtering your data narrows the scope of your search and ensures that certain vector embeddings aren't considered for comparison.
+In this section, you will learn how to combine filters with vector search. This mainly involves:
+* Updating the vector search index to include the appropriate filter fields
+* Updating the `$vectorSearch` stage in the aggregation pipeline definition to include the filters
 
-📚 [About the `filter` type](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/#about-the-filter-type)
+Fill in any `<CODE_BLOCK_N>` placeholders and run the cells under the **Step 7: Adding pre-filters to your vector search** section in the notebook to experiment with combining pre-filters with your vector search queries.
 
-### Published after the year 2000
+The answers for code blocks in this section are as follows:
 
 **CODE_BLOCK_11**
 
@@ -14,7 +16,7 @@ Filtering your data narrows the scope of your search and ensures that certain ve
 <summary>Answer</summary>
 <div>
 
-```Python
+```python
 {
     "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
     "type": "vectorSearch",
@@ -41,14 +43,12 @@ Filtering your data narrows the scope of your search and ensures that certain ve
 <summary>Answer</summary>
 <div>
 
-```Python
+```python
 {"year": {"$gte": 2000}}
 ```
 
 </div>
 </details>
-
-### Published after the year 2000 and under 100 pages
 
 **CODE_BLOCK_13**
 
@@ -56,7 +56,7 @@ Filtering your data narrows the scope of your search and ensures that certain ve
 <summary>Answer</summary>
 <div>
 
-```Python
+```python
 {
     "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
     "type": "vectorSearch",
@@ -84,7 +84,7 @@ Filtering your data narrows the scope of your search and ensures that certain ve
 <summary>Answer</summary>
 <div>
 
-```Python
+```python
 {"$and": [{"year": {"$gte": 2000}}, {"pages": {"$lte": 100}}]}
 ```
 
