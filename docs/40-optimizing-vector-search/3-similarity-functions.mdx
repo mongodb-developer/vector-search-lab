@@ -1,6 +1,8 @@
 # 👐 Changing the similarity metric
 
-MongoDB Atlas Vector Search supports different distance metrics to determine nearest neighbors during vector search. Refer to our [documentation](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/#std-label-avs-similarity-functions) to learn more about the supported distance metrics.
+The similarity metric determines how nearest neighbors are calculated, and consequently what items are retrieved during vector search.
+
+To change the similarity metric for vector search, you just need to update the `similarity` field in the vector search index definition.
 
 Fill in any `<CODE_BLOCK_N>` placeholders and run the cells under the **Step 8: Changing the similarity metric** section in the notebook to experiment with a different similarity metric for vector search.
 
