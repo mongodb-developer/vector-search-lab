@@ -22,16 +22,16 @@ To add pre-filters to vector search in MongoDB, you need to do the following:
 
 ```json
 {
-  “fields”:[
+  "fields":[
     {
-      “type”: “vector”,
-      “path”: “embedding”,
-      “numDimensions”: 1536,
-      “similarity”: “cosine”
+      "type": "vector",
+      "path": "embedding",
+      "numDimensions": 1536,
+      "similarity": "cosine"
     },
     {
-      “type”: “filter”,
-      “path”: “pages”
+      "type": "filter",
+      "path": "pages"
     },
     ...
   ]
@@ -43,20 +43,20 @@ To add pre-filters to vector search in MongoDB, you need to do the following:
 ```json
 [
   {
-    “$vectorSearch”: {
-      “index”: “vector_index”, 
-      “path”: “embedding”, 
-      “filter”: {“pages”: 100}, 
-      “queryVector”: [0.02421053, -0.022372592,...], 
-      “numCandidates”: 150, 
-      “limit”: 10
+    "$vectorSearch": {
+      "index": "vector_index", 
+      "path": "embedding", 
+      "filter": {"pages": 100}, 
+      "queryVector": [0.02421053, -0.022372592,...], 
+      "numCandidates": 150, 
+      "limit": 10
     }
   }, 
   {
-    “$project”: {
-      “_id”: 0, 
-      “Content”: 1,
-      “score”: {“$meta”: “vectorSearchScore”}
+    "$project": {
+      "_id": 0, 
+      "Content": 1,
+      "score": {"$meta": "vectorSearchScore"}
     }
   }
 ]
@@ -83,13 +83,13 @@ To enable vector auto-quantization on your embeddings, simply set the `quantizat
 
 ```json
 {
-  “fields”:[
+  "fields":[
     {
-      “type”: “vector”,
-      “path”: “embedding”,
-      “numDimensions”:512,
-      “similarity”: “cosine”,
-      “quantization”: “scalar”
+      "type": "vector",
+      "path": "embedding",
+      "numDimensions":512,
+      "similarity": "cosine",
+      "quantization": "scalar"
     },
     ...
   ]
