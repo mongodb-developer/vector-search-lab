@@ -20,7 +20,7 @@ To add pre-filters to vector search in MongoDB, you need to do the following:
 
 * Update the vector search index to include the appropriate filter fields, for example:
 
-```
+```json
 {
   “fields”:[
     {
@@ -40,7 +40,7 @@ To add pre-filters to vector search in MongoDB, you need to do the following:
 
 * Update the `$vectorSearch` stage in the aggregation pipeline definition to include the pre-filters, for example:
 
-```
+```json
 [
   {
     “$vectorSearch”: {
@@ -81,7 +81,7 @@ Quantization is the process of shrinking full-fidelity vectors into fewer bits. 
 
 To enable vector auto-quantization on your embeddings, simply set the `quantization` field to one of the above supported quantization types in the vector search index definition, for example:
 
-```
+```json
 {
   “fields”:[
     {
