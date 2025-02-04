@@ -34,3 +34,8 @@ The answers for code blocks in this section are as follows:
 
 </div>
 </details>
+
+:::tip
+Notice the slight increase in the size of the vector search index upon enabling quantization. This is because full-fidelity vectors are also stored on disk for re-scoring and/or exact nearest neighbors (ENN) search, with minimal RAM/cache usage when used for re-scoring. Hence, it is important to ensure an appropriate disk:RAM ratio on your hardware when enabling quantization.
+:::
+
