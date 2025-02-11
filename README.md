@@ -1,6 +1,6 @@
 # Developer Days Vector Search Lab
 
-This is the Vector Search Lab used during MongoDB Developer Days that covers an introduction to vector search using MongoDB.
+This is the Vector Search Lab used during MongoDB Developer Days that covers a deep-dive into vector search using MongoDB.
 
 You can access the online version of the lab [here](https://mongodb-developer.github.io/vector-search-lab/).
 
