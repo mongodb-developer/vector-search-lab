@@ -37,7 +37,7 @@ get_embedding(user_query, mode)
             "limit": 5,
         }
     },
-    {"$project": {"_id": 0, "title": 1, "cover": 1, "score": {"$meta": "vectorSearchScore"}}},
+    {"$project": {"_id": 0, "title": 1, "cover": 1, "year":1, "pages":1, "score": {"$meta": "vectorSearchScore"}}},
 ]
 ```
 
