@@ -1,0 +1,45 @@
+# 👐 Vector quantization
+
+Vector quantization is a technique to reduce the number of bits required to represent a vector. This can help reduce the storage and memory requirements for vector embeddings.
+
+To enable vector auto-quantization on your embeddings, simply set the `quantization` field to one of the supported quantization types (`scalar` or `binary`) in the vector search index definition.
+
+Fill in any `<CODE_BLOCK_N>` placeholders and run the cells under the **Step 9: Enable vector quantization** section in the notebook to enable auto-quantization on your embeddings.
+
+The answers for code blocks in this section are as follows:
+
+**CODE_BLOCK_17**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```json
+{
+    "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
+    "type": "vectorSearch",
+    "definition": {
+        "fields": [
+            {
+                "type": "vector",
+                "path": "embedding",
+                "numDimensions": 512,
+                "similarity": "cosine",
+                "quantization": "scalar",
+            },
+        ]
+    },
+}
+```
+
+</div>
+</details>
+
+:::info
+Notice the slight increase in the size of the vector search index upon enabling quantization. This is because full-fidelity vectors are also stored on disk for re-scoring and/or exact nearest neighbors (ENN) search.
+
+In the Atlas UI, the entire index size is displayed, which might be larger than the original index size, since Atlas does not show a break down of the data structures within an index that are stored in RAM and on disk.
+
+The Atlas Search metrics however will show a much smaller index that is held in memory when you enable automatic quantization. Refer to our [documentation](https://deploy-preview-6486--cloud-docs.netlify.app/atlas-vector-search/deployment-options/#storage-requirements-for-vectors) to learn more about these considerations.
+:::
+
