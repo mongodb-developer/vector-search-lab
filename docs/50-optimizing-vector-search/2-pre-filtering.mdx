@@ -1,0 +1,88 @@
+# 👐 Pre-filtering
+
+Pre-filtering is a technique to optimize vector search by only considering documents that match certain criteria during vector search.
+
+Fill in any `<CODE_BLOCK_N>` placeholders and run the cells under the **Step 7: Adding pre-filters to your vector search** section in the notebook to experiment with combining pre-filters with your vector search queries.
+
+The answers for code blocks in this section are as follows:
+
+**CODE_BLOCK_10**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```json
+{
+    "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
+    "type": "vectorSearch",
+    "definition": {
+        "fields": [
+            {
+                "type": "vector",
+                "path": "embedding",
+                "numDimensions": 512,
+                "similarity": "cosine",
+            },
+            {"type": "filter", "path": "year"},
+        ]
+    },
+}
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_11**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```json
+{"year": {"$gte": 2002}}
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_12**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```json
+{
+    "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
+    "type": "vectorSearch",
+    "definition": {
+        "fields": [
+            {
+                "type": "vector",
+                "path": "embedding",
+                "numDimensions": 512,
+                "similarity": "cosine",
+            },
+            {"type": "filter", "path": "year"},
+            {"type": "filter", "path": "pages"},
+        ]
+    },
+}
+```
+
+</div>
+</details>
+
+**CODE_BLOCK_13**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```json
+{"$and": [{"year": {"$gte": 2002}}, {"pages": {"$lte": 250}}]}
+```
+
+</div>
+</details>
