@@ -1,8 +1,0 @@
-{
-    "label": "Import Data",
-    "position": 40,
-    "link": {
-        "type": "generated-index",
-        "description": "Import a dataset into your MongoDB Atlas cluster"
-    }
-}

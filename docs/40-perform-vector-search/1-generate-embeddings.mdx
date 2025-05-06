@@ -1,0 +1,22 @@
+# 👐 Generate embeddings
+
+Let's imagine you're running an online bookstore and want your users to be able to search for books using vector search. Vector search allows you to search not just using text, but also other modalities such as images, audio, video etc.
+
+In this lab, you will see how to enable search using text as well as images. We will use [CLIP](https://huggingface.co/sentence-transformers/clip-ViT-B-32), a multimodal embedding model that can handle both images and text.
+
+Fill in any `<CODE_BLOCK_N>` placeholders and run the cells under the **Step 3: Generating embeddings** section in the notebook to see how to embed text and images using the CLIP model.
+
+The answers for code blocks in this section are as follows:
+
+**CODE_BLOCK_1**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```python
+embedding_model.encode(image).tolist()
+```
+
+</div>
+</details>

@@ -1,0 +1,36 @@
+# 🦹‍♀️ Vector quantization
+
+Vector quantization is a technique to reduce the number of bits required to represent a vector. This can help reduce the storage and memory requirements for vector embeddings.
+
+To enable vector auto-quantization on your embeddings, simply set the `quantization` field to one of the supported quantization types (`scalar` or `binary`) in the vector search index definition.
+
+Fill in any `<CODE_BLOCK_N>` placeholders and run the cells under the **🦹‍♀️ Enable vector quantization** section in the notebook to enable auto-quantization on your embeddings.
+
+The answers for code blocks in this section are as follows:
+
+**CODE_BLOCK_15**
+
+<details>
+<summary>Answer</summary>
+<div>
+
+```json
+{
+    "name": ATLAS_VECTOR_SEARCH_INDEX_NAME,
+    "type": "vectorSearch",
+    "definition": {
+        "fields": [
+            {
+                "type": "vector",
+                "path": "embedding",
+                "numDimensions": 512,
+                "similarity": "cosine",
+                "quantization": "scalar",
+            },
+        ]
+    },
+}
+```
+
+</div>
+</details>
