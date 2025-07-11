@@ -4,7 +4,7 @@
 // Change here to customise config
 
 // Name of the Github Repo, it's also teh baseUrl
-const workshopName = 'vector-search-lab';
+const workshopName = "vector-search-lab";
 // Change this if hosting outside mongodb-developer
 const organizationName = "mongodb-developer";
 
@@ -17,22 +17,22 @@ const favicon = "img/favicon.ico";
 // Main Page Features
 const featureList = [
   {
-    title: 'Hands-On Experiences',
-    illustration: 'img/coding.png',
+    title: "Hands-On Experiences",
+    illustration: "img/coding.png",
     description: `
         Learn by doing, not by reading.
     `,
   },
   {
-    title: 'Amazing Instructors',
-    illustration: 'img/highfive.png',
+    title: "Amazing Instructors",
+    illustration: "img/highfive.png",
     description: `
         Build it with the help of our amazing instructors, or just do it on your own.
     `,
   },
   {
-    title: 'Take-Home Material',
-    illustration: 'img/writing.png',
+    title: "Take-Home Material",
+    illustration: "img/writing.png",
     description: `
         Take home the material and keep learning.
     `,
@@ -42,7 +42,7 @@ const featureList = [
 // UTM stuff
 
 const utmAdvocateName = `apoorva.joshi`;
-const utmWorkshopName = 'vector_search_lab'
+const utmWorkshopName = "vector_search_lab";
 
 const utmParams = `utm_campaign=devrel&utm_source=workshop&utm_medium=cta&utm_content=${utmWorkshopName}&utm_term=${utmAdvocateName}`;
 
@@ -100,7 +100,7 @@ const config = {
   customFields: {
     startButtonTitle: `${startButtonTitle}`,
     featureList: featureList,
-    utmParams
+    utmParams,
   },
   presets: [
     [
@@ -154,6 +154,30 @@ const config = {
         additionalLanguages: ["powershell", "swift", "kotlin"],
       },
     }),
+  future: {
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true,
+      useCssCascadeLayers: true,
+    },
+    experimental_faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      rspackBundler: true,
+      rspackPersistentCache: true,
+      ssgWorkerThreads: true,
+      mdxCrossCompilerCache: true,
+    },
+    experimental_storage: {
+      type: "localStorage",
+      namespace: true,
+    },
+    // this should be commented out as we're generating a static site and serving it through GitHub Pages
+    // See: https://docusaurus.io/blog/releases/3.4#hash-router---experimental
+    // > This mode is not recommended for sites deployed through a web server.
+    // experimental_router: "hash",
+  },
 };
 
 module.exports = config;
