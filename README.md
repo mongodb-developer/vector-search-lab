@@ -1,3 +1,5 @@
+[![.github/workflows/deploy.yml](https://github.com/mongodb-developer/vector-search-lab/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/mongodb-developer/vector-search-lab/actions/workflows/deploy.yml)
+
 # Developer Days Vector Search Lab
 
 This is the Vector Search Lab used during MongoDB Developer Days that covers a deep-dive into vector search using MongoDB.
