@@ -32,7 +32,7 @@ get_embeddings(user_query, mode, "query")
             "index": ATLAS_VECTOR_SEARCH_INDEX_NAME,
             "queryVector": query_embedding,
             "path": "embedding",
-            "numCandidates": 50,
+            "numCandidates": 20,
             "filter": filter,
             "limit": 5,
         }
