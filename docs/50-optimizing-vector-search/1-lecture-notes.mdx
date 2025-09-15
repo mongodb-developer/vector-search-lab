@@ -2,7 +2,6 @@
 
 There are several ways to tune and optimize your vector search queries. In this lab, we will focus on the following:
 * Adding pre-filters to vector search
-* Changing the similarity metric for vector search
 * Vector quantization
 
 ## Adding pre-filters to vector search
@@ -26,7 +25,7 @@ To add pre-filters to vector search in MongoDB, you need to do the following:
     {
       "type": "vector",
       "path": "embedding",
-      "numDimensions": 1536,
+      "numDimensions": 1024,
       "similarity": "cosine"
     },
     {
@@ -62,17 +61,6 @@ To add pre-filters to vector search in MongoDB, you need to do the following:
 ]
 ```
 
-## Changing the similarity metric for vector search
-
-The similarity metric determines how nearest neighbors are calculated, and consequently what items are retrieved during vector search. MongoDB Atlas Vector Search supports the following metrics:
-* `euclidean`: Useful when differences in numerical values is meaningful
-* `cosine`: Useful when only relative relationships matter
-* `dotProduct`: If you want to emphasize not only the similarity in vector space but also on dominant features
-
-To change the similarity metric for vector search, simply update the `similarity` field in the vector search index definition.
-
-Refer to our [documentation](https://www.mongodb.com/docs/atlas/atlas-vector-search/vector-search-type/#std-label-avs-similarity-functions) to learn more about the different metrics.
-
 ## Vector quantization
 
 Quantization is the process of shrinking full-fidelity vectors into fewer bits. This can help reduce the storage and memory requirements for vector embeddings. MongoDB Atlas Vector Search supports two types of quantization:
@@ -87,7 +75,7 @@ To enable vector auto-quantization on your embeddings, simply set the `quantizat
     {
       "type": "vector",
       "path": "embedding",
-      "numDimensions":512,
+      "numDimensions":1024,
       "similarity": "cosine",
       "quantization": "scalar"
     },

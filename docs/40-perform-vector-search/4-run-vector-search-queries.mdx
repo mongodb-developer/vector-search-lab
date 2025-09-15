@@ -13,7 +13,7 @@ The answers for code blocks in this section are as follows:
 <div>
 
 ```python
-get_embedding(user_query, mode)
+get_embeddings(user_query, mode, "query")
 ```
 
 </div>
@@ -32,7 +32,7 @@ get_embedding(user_query, mode)
             "index": ATLAS_VECTOR_SEARCH_INDEX_NAME,
             "queryVector": query_embedding,
             "path": "embedding",
-            "numCandidates": 50,
+            "numCandidates": 20,
             "filter": filter,
             "limit": 5,
         }
